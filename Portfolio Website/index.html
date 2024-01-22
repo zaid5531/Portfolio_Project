@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zaid-Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style1.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Kdam+Thmor+Pro&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">
+          <img src="hello.png" alt="" />
+        </div>
+        <div class="right">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#element1">About Me</a></li>
+            <li><a href="#third">Skills</a></li>
+            <li><a href="#cv">Resume</a></li>
+            <li><a href="#cn">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="first-section">
+        <div class="left-section">
+          Hi! My Self <span class="span">Mohammad Zaid Khan</span> And I am a
+          Passionate Web Developer<br />
+          <span id="element"></span>
+        </div>
+        <div class="right-section">
+          <img src="khan.png" alt="" />
+        </div>
+      </section>
+      <hr />
+      <section class="second-section">
+        <h1 id="about">About Me</h1>
+        <br />
+        <span id="element1"></span>
+      </section>
+      <section class="third-section" id="third">
+        <h1 id="learn">What I have Learned So Far</h1>
+        <div class="image">
+          <img src="html.png" id="htm" />
+          <img src="css.png" id="css" />
+          <img src="js.png" id="js" /><br />
+        </div>
+        <div class="image2">
+          <img src="sql.png" alt="" id="sql" />
+          <img src="py.png" alt="" id="py" />
+        </div>
+        <div class="button">
+          <a href="./Zaid Khan.pdf" download="Zaid Khan" id="cv"
+            >Download CV&nbsp;
+            <i class="fas fa-file-download"></i>
+          </a>
+        </div>
+      </section>
+      <hr />
+      <section class="fourth-section">
+        <form action="" method="get">
+          <h3 id="cn">Contact Me</h3>
+          <input type="text" placeholder="Your Name" id="name" required />
+          <input type="email" placeholder="Your Email id" id="email" required />
+          <input type="text" placeholder="Your phone No" id="number" required />
+          <textarea
+            id="message"
+            rows="4"
+            placeholder="How can I help you?"
+          ></textarea>
+          <button type="submit" onclick="sendEmail(); reset(); return false">
+            Send Message
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer class="center">
+      <a href="https://www.instagram.com/_zaiidkhan"
+        ><img src="insta.png" id="insta"
+      /></a>
+      <a href="https://www.facebook.com/profile.php?id=100042546469019"
+        ><img src="face.png" id="face"
+      /></a>
+      <a href="https://twitter.com/MohammadZaidK17"
+        ><img src="twitt.png" id="twitt"
+      /></a>
+      <a href="https://twitter.com/MohammadZaidK17"
+        ><img src="link.png" id="link"
+      /></a>
+    </footer>
+    <div class="cp">Copyright &copy; 2023 All rights Reserved</div>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Currently",
+          "I am Pursuing",
+          "Bachelor of Engineering",
+          "in",
+          "Computer Science",
+          "At",
+          "Don Bosco",
+          "Institute of Technology.",
+        ],
+        typeSpeed: 40,
+      });
+    </script>
+    <script>
+      var typed = new Typed("#element1", {
+        strings: [
+          "Hello My self Mohammad Zaid Khan. I am a passionate Web Developer with a passion of creating clean and user-friendly websites. While I am reletively new to field, I have spent the last few years honing my skills and learning some new technologies. Now I am Pursuing my Bachelor of Engineeing in Computer science at Don Bosco Institute of Technology,Kurla. I have completed my Diploma in Computer Engineering at Government Polytechnic Mumbai,Bnadra with 9 CGPA.",
+        ],
+        typeSpeed: 40,
+      });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let number = document.getElementById("number").value;
+        let message = document.getElementById("message").value;
+        console.log("Called");
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "ss19co016.mohammadzaidkhan@gmail.com",
+          Password: "6C3FF860FBF405BC8D432E2AFB340545D987",
+          To: "mohammadkhan5531@gmail.com",
+          From: "ss19co016.mohammadzaidkhan@gmail.com",
+          Subject: "Mail from contact form",
+          Body:
+            "Name : " +
+            name +
+            "<br/> User Email : " +
+            email +
+            "<br/> User Phone : " +
+            number +
+            "<br/>Messages : " +
+            message,
+        }).then((message) => alert("Message has been sent successfully"));
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
